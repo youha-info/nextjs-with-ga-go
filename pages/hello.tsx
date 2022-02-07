@@ -2,19 +2,19 @@ import type {NextPage} from "next"
 import Head from "next/head"
 import Link from "next/link"
 
-const Home: NextPage = () => {
+const Hello: NextPage = () => {
     return <>
         <Head>
-            <title>Home</title>
-            <meta name="description" content="Home"/>
+            <title>Hello</title>
+            <meta name="description" content="Hello"/>
             <link rel="icon" href="/favicon.ico"/>
         </Head>
 
         <main>
-            <h1>홈 페이지</h1>
-            <Link href="/hello">hello</Link>
+            <h1>hello 페이지</h1>
+            <Link href="/">home</Link>
         </main>
     </>
 }
 
-export default Home
+export default Hello
