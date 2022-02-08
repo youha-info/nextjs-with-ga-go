@@ -10,6 +10,8 @@ Google Analycis(GA)와 Google Optimize(GO)는 많은 웹 서비스들에 기본�
 
 본 글에서는 nextjs에 GA와 GO를 설정하는 가장 적절한 방법을 알려준다.
 
+(참고로 본 글에서 사용하는 nextjs의 버전은 `12.0.10`이고 GA는 `UA`다.)
+
 ## nextjs에 GA와 GO를 설정하기 어려운 이유
 
 아래의 문제들 때문에 설정이 어렵다.
