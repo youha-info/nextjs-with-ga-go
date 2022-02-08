@@ -11,7 +11,7 @@ const Hello: NextPage = () => {
         </Head>
 
         <main>
-            <h1>hello 페이지</h1>
+            <h1>Hello</h1>
             <Link href="/">home</Link>
         </main>
     </>
