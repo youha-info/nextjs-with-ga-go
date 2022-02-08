@@ -1,4 +1,4 @@
-# nextjs 프로젝트에 Google Analycis와 Optimize 설정하기
+# nextjs 프로젝트에 Google Analytics와 Optimize 설정하기
 
 > 최종 코드: [github](https://github.com/youha-info/nextjs-with-ga-go)
 > 
@@ -15,7 +15,7 @@ Google Analycis(GA)와 Google Optimize(GO)는 많은 웹 서비스들에 기본�
 아래의 문제들 때문에 설정이 어렵다.
 
 1. GA, GO 스크립트를 동기로 불러오는 것이 불가능하다.
-2. 하이퍼링크를 통해 페이지 이동 시에 GA의 page_view 이벤트가 트리거되지 않는다.
+2. 하이퍼링크를 통해 페이지 이동 시에 GA의 `page_view` 이벤트가 트리거되지 않는다.
 3. 하이퍼링크를 통해 페이지 이동 시에 GO의 대안이 적용이 되지 않는다.
 4. nextjs의 hydration과 GO의 대안 적용이 충돌한다.
 5. css module을 사용할 경우, react element의 이름 혹은 css module의 파일명 등이 변경되었을 때 GO의 대안이 적용되지 않는다.
@@ -30,17 +30,17 @@ nextjs에서 동기로 스크립트를 불러오려고하면 [No Sync Scripts](h
 
 이는 GA와 GO 스크립트를 비동기로 불러오도록하면 해결된다. nextjs에서 지원하는 [Script 태그](https://nextjs.org/docs/basic-features/script)를 사용하여 스크립트를 불러오면 해결된다.
 
-> 문제 2. 하이퍼링크를 통해 페이지 이동 시에 GA의 page_view 이벤트가 트리거되지 않는다.
+> 문제 2. 하이퍼링크를 통해 페이지 이동 시에 GA의 `page_view` 이벤트가 트리거되지 않는다.
 
 nextjs의 Link 태그를 사용하여 구현된 하이퍼링크를 클릭하면 페이지 전체가 새로 불러와지는 것이 아니라, js 파일만 받아와 페이지의 요소를 변경해준다. 따라서 페이지가 이동되더라도 GA의 page_view 이벤트가 트리거되지 않는다.
 
-이는 페이지 주소가 변경될 때마다 직접 GA의 page_view 이벤트를 트리거해주면 해결된다. nextjs에서 지원하는 useRouter 훅을 사용하여 routeChangeComplete 이벤트에 page_view 이벤트를 트리거하는 콜백을 설정해주면 된다.
+이는 페이지 주소가 변경될 때마다 직접 GA의 page_view 이벤트를 트리거해주면 해결된다. nextjs에서 지원하는 useRouter 훅을 사용하여 `routeChangeComplete` 이벤트에 GA의 `page_view` 이벤트를 트리거하는 콜백을 설정해주면 된다.
 
 > 문제 3. 하이퍼링크를 통해 페이지 이동 시에 GO의 대안이 적용이 되지 않는다.
 
 문제 2와 같은 이유로 GO의 대안이 적용되지 않는다.
 
-이는 GO 콘솔에서 환경을 만들 때, 활성화 이벤트를 계속으로 설정해주면 해결된다.
+이는 GO 콘솔에서 환경을 만들 때, 활성화 이벤트를 `계속`으로 설정해주면 해결된다.
 
 > 문제 4. nextjs의 hydration과 GO의 대안 적용이 충돌한다.
 
