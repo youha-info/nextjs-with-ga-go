@@ -28,7 +28,7 @@ function MyApp({Component, pageProps}: AppProps) {
                 __html: ".async-hide{opacity: 0 !important}",
             }}/>
             <script dangerouslySetInnerHTML={{
-                __html: `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','${GOOGLE_ANALYTICS}',{page_path:window.location.pathname});(function(a,s,y,n,c,h,i,d,e){s.className+=' '+y;h.start=1*new Date;h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};(a[n]=a[n]||[]).hide=h;setTimeout(function(){i();h.end=null},c);h.timeout=c;})(window,document.documentElement,'async-hide','dataLayer',10000,{'${GOOGLE_OPTIMIZE}':true});`,
+                __html: `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','${GOOGLE_ANALYTICS}',{page_path:window.location.pathname});(function(a,s,y,n,c,h,i,d,e){s.className+=' '+y;h.start=1*new Date;h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};(a[n]=a[n]||[]).hide=h;setTimeout(function(){i();h.end=null},c);h.timeout=c;})(window,document.documentElement,'async-hide','dataLayer',4000,{'${GOOGLE_OPTIMIZE}':true});`,
             }}/>
         </Head>
         <Script src={`https://www.googleoptimize.com/optimize.js?id=${GOOGLE_OPTIMIZE}`}/>
